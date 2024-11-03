@@ -1,5 +1,4 @@
-
-#include <stdio.h>
+include <stdio.h>
 #include <string.h>
 
 
@@ -15,33 +14,15 @@ int main() {
 
 
     char byte;
-    int arr[100];
-    int i=0;
-    int sum =0;
+    int num = 0;
+    printf("result\n");
     while(fread(&byte, sizeof(byte), 1, fptr)) {
-    if(i==7){
-    i=0;
-    sum =0;
-
+        printf("%02X, ", byte);
+        fprintf(hexfptr, "%02X", byte);
     }
-    if (byte=='1'){
-        sum+=2^i;
-        i++;
-        } else {i++;}
 
-}
-        printf("%d", sum);
-        //fputc(var,hexfptr);
-
-
-     // Closing the file
      fclose(fptr);
      printf("Data successfully read from file\n");
-     //printf("Count of words: %d\n",wordC);
-     //printf("Count of characters: %d\n", charC);
-     //printf("Count of lines: %d\n",lineC);
-
-
 
 return 0;
 
